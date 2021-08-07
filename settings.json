@@ -1,0 +1,33 @@
+{
+	"cmake.autoSelectActiveFolder": true,
+	"cmake.configureOnOpen": true,
+	// We want to use clangd for autocomplete but need MS' C++ extension for
+	// their debugger since LLDB doesn't support PDB and configuring VSCode
+	// to build FSO with DWARF debug info (through i.e. clang) seems overkill.
+	"C_Cpp.autocomplete": "Disabled",
+	"C_Cpp.intelliSenseEngine": "Disabled",
+	// VSCode's encoding detection is fairly buggy. We use UTF-8 everywhere
+	// so let's just hardcode that.
+	"files.autoGuessEncoding": false,
+	"files.encoding": "utf8",
+	// Make sure the file ends up where clangd expects it.
+	"cmake.copyCompileCommands": "${workspaceFolder}/compile_commands.json",
+	"cmake.configureSettings": {
+		"Qt5_DIR": "${workspaceFolder}/.vscode/qt/lib/cmake/Qt5",
+		"FSO_BUILD_QTFRED": "ON",
+	},
+	// CMake doesn't generate the compile_commands.json if we use the VS generator
+	// (since that generator produces a project, not a bunch of commands to execute)
+	// but Ninja is great and included in recent VS version so let's just use that
+	// instead.
+	"cmake.generator": "Ninja",
+	"clangd.onConfigChanged": "restart",
+	"C/C++ Include Guard.Macro Type": "Filepath",
+	// clangd uses our .clang-tidy settings which will should make the CI happy
+	"[c]": {
+        "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd"
+    },
+    "[cpp]": {
+        "editor.defaultFormatter": "llvm-vs-code-extensions.vscode-clangd"
+    },
+}

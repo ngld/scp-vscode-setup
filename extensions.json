@@ -1,0 +1,23 @@
+{
+	"recommendations": [
+		// only the following extensions are required
+		// CMake Tools: Syntax highlighting for CMake files and buttons to launch & debug executables
+		"ms-vscode.cmake-tools",
+		// C/C++: We need this for proper debugging on Windows
+		"ms-vscode.cpptools",
+		// clangd: An excellent autocomplete, documentation-on-hover, etc. engine based on clang
+		"llvm-vs-code-extensions.vscode-clangd",
+
+		// optional but recommended
+		// C/C++ Include Guard: Manually typing the include guard is tedious so let's automate it.
+		"akiramiyakoda.cppincludeguard",
+		// EditorConfig for VS Code: The SCP has an .editorconfig, let's use it!
+		"editorconfig.editorconfig",
+		// Todo Tree: makes TODOs easy to find
+		"gruntfuggly.todo-tree",
+		// Trailing Spaces: Highlight those pesky trailing spaces.
+		"shardulm94.trailing-spaces",
+		// Shader languages support: Syntax highlighting for .gls files
+		"slevesque.shader"
+	]
+}
