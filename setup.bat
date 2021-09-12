@@ -17,6 +17,7 @@ if errorlevel 1 goto :tar_missing
 cmake --help > NUL
 if errorlevel 1 goto :cmake_missing
 
+:detect_vs
 echo ==^> Detecting Visual Studio
 
 set "wherepath=%ProgramFiles(x86)%\Microsoft Visual Studio\Installer"
@@ -140,6 +141,14 @@ pause
 exit /b 1
 
 :cmake_missing
+if exist "C:\Program Files\CMake" (
+  set "PATH=C:\Program Files\CMake\bin;%PATH%"
+  echo Added CMake folder to the PATH.
+
+  cmake --help > NUL
+  if not errorlevel 1 goto :detect_vs
+)
+
 echo.
 echo You haven't installed CMake, yet. Please go to https://cmake.org/download/
 echo download and run the installer, then run this script again.
