@@ -94,6 +94,8 @@ mkdir build
 cd build
 
 echo ==^> Running CMake
+set CC=cl
+set CXX=cl
 cmake -GNinja "-DQt5_DIR=%qtdir%" -DFSO_BUILD_QTFRED=ON -DCMAKE_BUILD_TYPE=Debug -DCMAKE_EXPORT_COMPILE_COMMANDS=1 ..
 if errorlevel 1 goto :cmake_error
 
