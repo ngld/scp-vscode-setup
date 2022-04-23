@@ -4,7 +4,7 @@ set FSO_GIT=https://github.com/scp-fs2open/fs2open.github.com.git
 set QTVERSION=5.12.5
 set QTBASE=https://download.qt.io/online/qtsdkrepository/windows_x86/desktop/qt5_5125/qt.qt5.5125.win64_msvc2017_64/5.12.5-0-201909090442qtbase-Windows-Windows_10-MSVC2017-Windows-Windows_10-X86_64.7z
 set QTTOOLS=https://download.qt.io/online/qtsdkrepository/windows_x86/desktop/qt5_5125/qt.qt5.5125.win64_msvc2017_64/5.12.5-0-201909090442qttools-Windows-Windows_10-MSVC2017-Windows-Windows_10-X86_64.7z
-set LIBARCHIVE=https://github.com/libarchive/libarchive/releases/download/3.5.1/libarchive-v3.5.1-win64.zip
+set LIBARCHIVE=https://github.com/libarchive/libarchive/releases/download/v3.5.1/libarchive-v3.5.1-win64.zip
 
 echo ==^> Looking for dependencies
 
